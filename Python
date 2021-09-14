@@ -1,0 +1,25 @@
+def findAngle(hour, min):
+ 
+    # find the position of the hour's hand
+    h = (hour * 360) // 12 + (min * 360) // (12 * 60)
+ 
+    # find the position of the minute's hand
+    m = (min * 360) // (60)
+ 
+    # calculate the angle difference
+    angle = abs(h - m)
+ 
+    # consider the shorter angle and return it
+    if angle > 180:
+        angle = 360 - angle
+ 
+    return angle
+ 
+ 
+# Clock Angle Problem
+if __name__ == '__main__':
+ 
+    hour = 3
+    min = 00
+ 
+    print(findAngle(hour, min))
